@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Máquina de Alimentos</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Seleccione un producto:
+        
+    </h2>
+    <div class="product">
+      <label>
+        <input type="radio" name="product" value="A" checked>
+        Producto A - $270
+      </label>
+    </div>
+    <div class="product">
+      <label>
+        <input type="radio" name="product" value="B">
+        Producto B - $340
+      </label>
+    </div>
+    <div class="product">
+      <label>
+        <input type="radio" name="product" value="C">
+        Producto C - $390
+      </label>
+    </div>
+    <button onclick="realizarCompra()">Pagar</button>
+    <div id="paymentSection" style="display: none;">
+      <h2>Ingrese monedas:</h2>
+      <input type="number" id="coinInput" placeholder="Ingrese moneda">
+      <button onclick="ingresarMoneda()">Ingresar</button>
+    </div>
+    <div id="changeSection" style="display: none;">
+      <h2>Su cambio es:</h2>
+      <ul id="changeOutput"></ul>
+      <button onclick="reset()">Realizar otra compra</button>
+    </div>
+    <div id="summary" style="display: none;">
+      <h2>Resumen de transacciones:</h2>
+      <ul id="summaryList"></ul>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

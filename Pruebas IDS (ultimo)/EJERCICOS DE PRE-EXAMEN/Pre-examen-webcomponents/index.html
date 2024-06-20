@@ -1,0 +1,109 @@
+<!-- Definición del componente de login -->
+<template id="login-component-template">
+    <style>
+      /* Estilos para el componente de login */
+      .login-container {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      .login-container h2 {
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-group input[type="text"], 
+      .form-group input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      .form-group button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      .form-group button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+    <div class="login-container">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <button id="login-btn">Iniciar sesión</button>
+      </div>
+    </div>
+  </template>
+  
+  <!-- Script para registrar el componente -->
+  <script>
+    class LoginComponent extends HTMLElement {
+      constructor() {
+        super();
+  
+        // Crear un shadow root
+        this.attachShadow({ mode: 'open' });
+  
+        // Clonar el contenido del template y añadirlo al shadow DOM
+        const template = document.getElementById('login-component-template');
+        const templateContent = template.content.cloneNode(true);
+        this.shadowRoot.appendChild(templateContent);
+  
+        // Añadir evento al botón de login
+        this.shadowRoot.querySelector('#login-btn').addEventListener('click', () => {
+          const username = this.shadowRoot.querySelector('#username').value;
+          const password = this.shadowRoot.querySelector('#password').value;
+          
+          // Validar usuario y contraseña (simulación sencilla)
+          if (username === 'usuario' && password === 'contraseña') {
+            alert('Login exitoso!');
+            // Aquí podrías redirigir o ejecutar alguna acción adicional
+          } else {
+            alert('Usuario o contraseña incorrectos');
+          }
+        });
+      }
+    }
+  
+    // Registrar el componente en el DOM
+    customElements.define('login-component', LoginComponent);
+  </script>
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componente de Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="login-component.html" defer></script>
+</head>
+<body>
+  <login-component></login-component>
+  <script src="main.js" type="module"></script>
+  <p></p>
+</body>
+</html>

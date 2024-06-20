@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="C1" data-id="US" data-dial-code="1">USA</li>
+        <li id="C2" data-id="CA" data-dial-code="1">CANADA</li>
+        <li id="C3" data-id="FF" data-dial-code="3">FRANCE</li>
+    </ul>
+    <script>
+    // Obtener todos los elementos <li> dentro de <ul>
+    var listItems = document.querySelectorAll('ul li');
+    // Iterar sobre cada <li> y asignar un evento de clic
+    listItems.forEach(function(li) {
+        li.addEventListener('click', function() {
+            var id = li.id;
+            var isoId = li.getAttribute('data-id');
+            var dialCode = li.getAttribute('data-dial-code');
+
+            // Mostrar alert con la información del elemento seleccionado
+            alert(`Elemento Seleccionado:
+            "ID elemento: ${id}"
+            "ISO ID: ${isoId}"
+            "Dial Code: ${dialCode}"`);
+        });
+    });
+    </script>
+</body>
+</html>

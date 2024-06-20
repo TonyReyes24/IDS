@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Personas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabla de Personas</h2>
+    <table id="personTable">
+        <thead>
+            <tr>
+                <th>Person ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Aquí se añadirán las filas de la tabla dinámicamente con JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Script de JavaScript para generar la tabla -->
+    <script src="tabla.js"></script>
+</body>
+</html>
